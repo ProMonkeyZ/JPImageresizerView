@@ -9,6 +9,8 @@
 #import "JPViewController.h"
 #import "JPImageViewController.h"
 
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
 @interface JPViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *processBtns;
@@ -26,10 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = self.configure.bgColor;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.fd_prefersNavigationBarHidden = YES;
     
     self.recoveryBtn.enabled = NO;
-    
+
     __weak typeof(self) wSelf = self;
     JPImageresizerView *imageresizerView = [JPImageresizerView imageresizerViewWithConfigure:self.configure imageresizerIsCanRecovery:^(BOOL isCanRecovery) {
         __strong typeof(wSelf) sSelf = wSelf;
@@ -46,24 +49,15 @@
         sSelf.horMirrorBtn.enabled = enabled;
         sSelf.verMirrorBtn.enabled = enabled;
     }];
-    [self.view insertSubview:imageresizerView atIndex:0];
+//    [self.view insertSubview:imageresizerView atIndex:0];
+    [self.view addSubview:imageresizerView];
     self.imageresizerView = imageresizerView;
     self.configure = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 //    [self.imageresizerView setResizeWHScale:1 animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)dealloc {

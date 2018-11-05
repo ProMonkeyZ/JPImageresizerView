@@ -40,13 +40,15 @@
     
     NSString *title4 = @"其他样式";
     JPImageresizerConfigure *configure4 = [JPImageresizerConfigure defaultConfigureWithResizeImage:image make:^(JPImageresizerConfigure *configure) {
+        CGFloat navH = [UIApplication sharedApplication].statusBarFrame.size.height + 44;
         configure.jp_resizeImage([UIImage imageNamed:@"Kobe.jpg"]).
         jp_maskAlpha(0.5).
         jp_strokeColor([UIColor yellowColor]).
         jp_frameType(JPClassicFrameType).
         jp_contentInsets(contentInsets).
-        jp_bgColor([UIColor orangeColor]).
+        jp_bgColor([UIColor redColor]).
         jp_isClockwiseRotation(YES).
+        jp_viewFrame(CGRectMake(0, navH, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.tabBarController.tabBar.bounds.size.height)).
         jp_animationCurve(JPAnimationCurveEaseOut);
     }];
     

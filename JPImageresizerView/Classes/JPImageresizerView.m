@@ -235,7 +235,7 @@
 
 - (void)setupScorllView {
     CGFloat h = _contentSize.height;
-    CGFloat w = h * h / _contentSize.width;
+    CGFloat w = _contentSize.width; // h * h /
     CGFloat x = _contentInsets.left + (self.bounds.size.width - w) * 0.5;
     CGFloat y = _contentInsets.top;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
@@ -249,7 +249,9 @@
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.autoresizingMask = UIViewAutoresizingNone;
     scrollView.clipsToBounds = NO;
-    if (@available(iOS 11.0, *)) scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    if (@available(iOS 11.0, *))  {
+        scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     [self addSubview:scrollView];
     self.scrollView = scrollView;
 }

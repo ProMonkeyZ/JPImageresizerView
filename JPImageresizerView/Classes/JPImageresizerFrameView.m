@@ -559,7 +559,9 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
 
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
-    if (self.superview) [self updateImageOriginFrameWithDirection:_rotationDirection];
+    if (self.superview)  {
+        [self updateImageOriginFrameWithDirection:_rotationDirection];
+    }
 }
 
 - (void)dealloc {
@@ -625,8 +627,8 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
     switch (horn) {
         case JPLeftTop:
         {
-            position.x -= halfArrLineW;
-            position.y -= halfArrLineW;
+            position.x += halfArrLineW;
+            position.y += halfArrLineW;
             firstPoint = CGPointMake(position.x, position.y + arrLength);
             thirdPoint = CGPointMake(position.x + arrLength, position.y);
             break;
@@ -634,8 +636,8 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
             
         case JPLeftBottom:
         {
-            position.x -= halfArrLineW;
-            position.y += halfArrLineW;
+            position.x += halfArrLineW;
+            position.y -= halfArrLineW;
             firstPoint = CGPointMake(position.x, position.y - arrLength);
             thirdPoint = CGPointMake(position.x + arrLength, position.y);
             break;
@@ -643,8 +645,8 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
             
         case JPRightTop:
         {
-            position.x += halfArrLineW;
-            position.y -= halfArrLineW;
+            position.x -= halfArrLineW;
+            position.y += halfArrLineW;
             firstPoint = CGPointMake(position.x - arrLength, position.y);
             thirdPoint = CGPointMake(position.x, position.y + arrLength);
             break;
@@ -652,8 +654,8 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
             
         case JPRightBottom:
         {
-            position.x += halfArrLineW;
-            position.y += halfArrLineW;
+            position.x -= halfArrLineW;
+            position.y -= halfArrLineW;
             firstPoint = CGPointMake(position.x - arrLength, position.y);
             thirdPoint = CGPointMake(position.x, position.y - arrLength);
             break;
