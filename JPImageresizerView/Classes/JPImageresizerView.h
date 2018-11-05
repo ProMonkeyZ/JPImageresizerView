@@ -46,6 +46,7 @@
                           frameType:(JPImageresizerFrameType)frameType
                      animationCurve:(JPAnimationCurve)animationCurve
                         strokeColor:(UIColor *)strokeColor
+                    lineStrokeColor:(UIColor *)lineStrokeColor
                             bgColor:(UIColor *)bgColor
                           maskAlpha:(CGFloat)maskAlpha
                       verBaseMargin:(CGFloat)verBaseMargin

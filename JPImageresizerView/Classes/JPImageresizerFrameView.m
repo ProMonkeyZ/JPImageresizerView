@@ -177,6 +177,17 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
     }
 }
 
+- (void)setLineStrokeColor:(UIColor *)lineStrokeColor {
+    _lineStrokeColor = lineStrokeColor;
+    if (_frameType == JPClassicFrameType) {
+        CGColorRef lineStrokeCGColor = lineStrokeColor.CGColor;
+        _horTopLine.strokeColor = lineStrokeCGColor;
+        _horBottomLine.strokeColor = lineStrokeCGColor;
+        _verLeftLine.strokeColor = lineStrokeCGColor;
+        _verRightLine.strokeColor = lineStrokeCGColor;
+    }
+}
+
 - (void)setStrokeColor:(UIColor *)strokeColor {
     _strokeColor = strokeColor;
     CGColorRef strokeCGColor = strokeColor.CGColor;
@@ -212,11 +223,6 @@ typedef NS_ENUM(NSUInteger, JPLinePosition) {
         _leftBottomDot.fillColor = clearCGColor;
         _rightTopDot.fillColor = clearCGColor;
         _rightBottomDot.fillColor = clearCGColor;
-        
-        _horTopLine.strokeColor = strokeCGColor;
-        _horBottomLine.strokeColor = strokeCGColor;
-        _verLeftLine.strokeColor = strokeCGColor;
-        _verRightLine.strokeColor = strokeCGColor;
     }
     [CATransaction commit];
 }

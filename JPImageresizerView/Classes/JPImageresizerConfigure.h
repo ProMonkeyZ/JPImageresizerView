@@ -46,6 +46,8 @@
 /** 裁剪线颜色 */
 @property (nonatomic, strong) UIColor *strokeColor;
 
+@property (nonatomic, strong) UIColor *lineStrokeColor;
+
 /** 背景颜色 */
 @property (nonatomic, strong) UIColor *bgColor;
 
@@ -74,6 +76,7 @@
 @property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_frameType)(JPImageresizerFrameType frameType);
 @property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_animationCurve)(JPAnimationCurve animationCurve);
 @property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_strokeColor)(UIColor *strokeColor);
+@property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_lineStrokeColor)(UIColor *lineStrokeColor);
 @property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_bgColor)(UIColor *bgColor);
 @property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_maskAlpha)(CGFloat maskAlpha);
 @property (nonatomic, copy, readonly) JPImageresizerConfigure *(^jp_resizeWHScale)(CGFloat resizeWHScale);

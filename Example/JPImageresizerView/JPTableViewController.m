@@ -44,6 +44,7 @@
         configure.jp_resizeImage([UIImage imageNamed:@"Kobe.jpg"]).
         jp_maskAlpha(0.5).
         jp_strokeColor([UIColor yellowColor]).
+        jp_lineStrokeColor([UIColor blackColor]).
         jp_frameType(JPClassicFrameType).
         jp_contentInsets(contentInsets).
         jp_bgColor([UIColor redColor]).

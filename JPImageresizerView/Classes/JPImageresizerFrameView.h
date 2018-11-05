@@ -37,6 +37,8 @@
 
 @property (nonatomic, strong) UIColor *strokeColor;
 
+@property (nonatomic, strong) UIColor *lineStrokeColor;
+
 @property (nonatomic, strong) UIColor *fillColor;
 
 @property (nonatomic, assign) CGFloat maskAlpha;

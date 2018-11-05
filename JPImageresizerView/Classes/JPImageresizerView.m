@@ -166,6 +166,7 @@
                                    frameType:configure.frameType
                               animationCurve:configure.animationCurve
                                  strokeColor:configure.strokeColor
+                             lineStrokeColor:configure.lineStrokeColor
                                      bgColor:configure.bgColor
                                    maskAlpha:configure.maskAlpha
                                verBaseMargin:configure.verBaseMargin
@@ -182,6 +183,7 @@
                           frameType:(JPImageresizerFrameType)frameType
                      animationCurve:(JPAnimationCurve)animationCurve
                         strokeColor:(UIColor *)strokeColor
+                    lineStrokeColor:(UIColor *)lineStrokeColor
                             bgColor:(UIColor *)bgColor
                           maskAlpha:(CGFloat)maskAlpha
                       verBaseMargin:(CGFloat)verBaseMargin
@@ -213,6 +215,7 @@
                                frameType:frameType
                           animationCurve:animationCurve
                              strokeColor:strokeColor
+                         lineStrokeColor:lineStrokeColor
                                maskAlpha:maskAlpha
                            resizeWHScale:resizeWHScale
                       isCanRecoveryBlock:imageresizerIsCanRecovery
@@ -287,6 +290,7 @@
                          frameType:(JPImageresizerFrameType)frameType
                     animationCurve:(JPAnimationCurve)animationCurve
                        strokeColor:(UIColor *)strokeColor
+                   lineStrokeColor:(UIColor *)lineStrokeColor
                          maskAlpha:(CGFloat)maskAlpha
                      resizeWHScale:(CGFloat)resizeWHScale
                 isCanRecoveryBlock:(JPImageresizerIsCanRecoveryBlock)isCanRecoveryBlock
@@ -308,7 +312,7 @@
                                          imageView:self.imageView
                          imageresizerIsCanRecovery:isCanRecoveryBlock
                       imageresizerIsPrepareToScale:isPrepareToScaleBlock];
-    
+    frameView.lineStrokeColor = lineStrokeColor;
     frameView.isRotatedAutoScale = self.isRotatedAutoScale;
     
     __weak typeof(self) wSelf = self;

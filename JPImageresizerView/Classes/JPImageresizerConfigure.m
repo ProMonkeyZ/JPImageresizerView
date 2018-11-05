@@ -17,6 +17,7 @@
     configure.frameType = JPConciseFrameType;
     configure.animationCurve = JPAnimationCurveEaseOut;
     configure.strokeColor = [UIColor whiteColor];
+    configure.lineStrokeColor = [UIColor redColor];
     configure.bgColor = [UIColor blackColor];
     configure.maskAlpha = 0.75;
     configure.verBaseMargin = 10.0;
@@ -101,6 +102,13 @@
 - (JPImageresizerConfigure *(^)(UIColor *strokeColor))jp_strokeColor {
     return ^(UIColor *strokeColor) {
         self.strokeColor = strokeColor;
+        return self;
+    };
+}
+
+- (JPImageresizerConfigure *(^)(UIColor *))jp_lineStrokeColor {
+    return ^(UIColor *lineStrokeColor) {
+        self.lineStrokeColor = lineStrokeColor;
         return self;
     };
 }
