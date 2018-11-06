@@ -20,7 +20,7 @@
     configure.lineStrokeColor = [UIColor redColor];
     configure.bgColor = [UIColor blackColor];
     configure.maskAlpha = 0.75;
-    configure.verBaseMargin = 10.0;
+    configure.verBaseMargin = 27.0;
     configure.horBaseMargin = 10.0;
     configure.resizeWHScale = 0.0;
     configure.contentInsets = UIEdgeInsetsZero;

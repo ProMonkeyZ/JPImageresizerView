@@ -21,7 +21,7 @@
     self.title = @"Example";
     
     UIImage *image = [UIImage imageNamed:@"Girl.jpg"];
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(50, 0, (40 + 30 + 30 + 10), 0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, (40 + 30 + 30 + 10) + 50, 0);
     
     NSString *title1 = @"默认样式";
     JPImageresizerConfigure *configure1 = [JPImageresizerConfigure defaultConfigureWithResizeImage:image make:^(JPImageresizerConfigure *configure) {
@@ -40,16 +40,17 @@
     
     NSString *title4 = @"其他样式";
     JPImageresizerConfigure *configure4 = [JPImageresizerConfigure defaultConfigureWithResizeImage:image make:^(JPImageresizerConfigure *configure) {
-        CGFloat navH = [UIApplication sharedApplication].statusBarFrame.size.height + 44;
+        CGFloat statusBarH = [UIApplication sharedApplication].statusBarFrame.size.height;
+        CGFloat bottomHeight = 113; // 应该加上X的下巴高度.
         configure.jp_resizeImage([UIImage imageNamed:@"Kobe.jpg"]).
         jp_maskAlpha(0.5).
         jp_strokeColor([UIColor yellowColor]).
         jp_lineStrokeColor([UIColor blackColor]).
         jp_frameType(JPClassicFrameType).
-        jp_contentInsets(contentInsets).
+        jp_contentInsets(UIEdgeInsetsMake(statusBarH, 38, bottomHeight, 38)).
         jp_bgColor([UIColor redColor]).
         jp_isClockwiseRotation(YES).
-        jp_viewFrame(CGRectMake(0, navH, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.tabBarController.tabBar.bounds.size.height - 170.f)).
+//        jp_viewFrame(CGRectMake(0, navH, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.tabBarController.tabBar.bounds.size.height - 170.f)).
         jp_animationCurve(JPAnimationCurveEaseOut);
     }];
     

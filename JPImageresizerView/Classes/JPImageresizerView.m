@@ -239,7 +239,7 @@
 - (void)setupScorllView {
     CGFloat h = _contentSize.height;
     CGFloat w = _contentSize.width; // h * h /
-    CGFloat x = _contentInsets.left + (self.bounds.size.width - w) * 0.5;
+    CGFloat x = _contentInsets.left; // + (self.bounds.size.width - w) * 0.5;
     CGFloat y = _contentInsets.top;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = CGRectMake(x, y, w, h);
